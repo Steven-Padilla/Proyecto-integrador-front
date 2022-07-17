@@ -1,13 +1,13 @@
 import {useState} from 'react';
 import { getUser } from '../services/services';
-import { Bienvenido } from './Bienvenido';
 
 export default function Login(){
     // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // 
+
+  
 
   const errors = {
     uname: "invalid username",
@@ -73,7 +73,7 @@ export default function Login(){
   return (
     <div className="app">
       <div className="login-form">
-        {isSubmitted ? <Bienvenido/>: renderForm}
+        {isSubmitted ? window.location.replace('http://localhost:3000/menu'): renderForm}
       </div>
     </div>
   );

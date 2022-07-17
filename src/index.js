@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './components/css.css';
 import reportWebVitals from './reportWebVitals';
 import {
   BrowserRouter,
@@ -12,8 +11,9 @@ import {
 import Login from './components/Login';
 import { Actuales } from './components/Actuales';
 import { Historial } from './components/Historial';
-import { Componentes } from './components/Componente';
 import { Menu } from './components/Menu'
+
+import './components/css.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,7 +25,6 @@ root.render(
       <Route path="/" element={<Login />} />
       <Route path="menu/Actuales" element={<Actuales />} />
       <Route path="menu/Historial" element={<Historial />} />
-      <Route path="menu/Componentes" element={<Componentes />} />
       <Route path='Menu' element={<Menu/>}/>
     </Routes>
   </BrowserRouter>

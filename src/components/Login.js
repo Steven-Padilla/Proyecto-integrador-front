@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import { getUser } from '../services/services';
+import { Bienvenido } from './Bienvenido';
 
 export default function Login(){
     // React States
@@ -72,8 +73,7 @@ export default function Login(){
   return (
     <div className="app">
       <div className="login-form">
-        <div className="title">Sign In</div>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+        {isSubmitted ? <Bienvenido/>: renderForm}
       </div>
     </div>
   );

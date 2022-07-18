@@ -1,6 +1,6 @@
 .container{
     font-family: sans-serif;
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -9,30 +9,21 @@
     background-size: cover;
 }
 
+.card{
+    margin: 0 20vh ;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 3);
+    border-radius: 2%;
+    background-color: #cdffd4;
+    padding: 10vh 10vh; 
+
+}
+.tablas{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2%;
+}
+
 .titulo{
     text-align: center;
-    grid-column: span 2;
-    margin-bottom: 10%;
-}
-
-.card{
-    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 3);
-    border-radius: 5%;
-    background-color: #8CD1AD;
-    padding: 10vh;
-
-}
-
-.btnLogout{
-    grid-column: span 2;
-    text-align: right;
-}
-
-
-.botones{
-    height: 10vh;
-
-    display:table;
-    margin: 0 auto;
-    
+    padding-bottom: 5%;
 }

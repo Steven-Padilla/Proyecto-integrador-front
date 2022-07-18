@@ -1,0 +1,38 @@
+.container{
+    border-radius: 2%;
+    color: black;
+    background-color: #8CD1AD;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 3);
+}
+
+
+.btnLogout{
+    margin-top: .6%;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.a{
+
+    border-radius: 20%;
+    text-decoration: none;
+    color: white;
+    padding: .2%;
+    margin: .8%;
+    background-color: #005b8f ;
+    
+
+}
+
+.aMenu{
+    border-radius: 20%;
+    text-decoration: none;
+    color: white;
+    padding: .2%;
+    margin: .8%;
+    background-color: #b5b5ab ;
+
+}

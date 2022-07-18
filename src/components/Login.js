@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import { Navigate } from 'react-router-dom';
 import { getUser } from '../services/services';
 import style from './css/Login.module.css'
 export default function Login(){
@@ -75,7 +76,7 @@ export default function Login(){
   return (
     <div className={style.container}>
       <div className="login-form">
-        {isSubmitted ? window.location.replace('http://localhost:3000/menu'): renderForm}
+        {isSubmitted ? <Navigate to='/Menu' {...true} />: renderForm}
       </div>
     </div>
   );

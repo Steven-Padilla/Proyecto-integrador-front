@@ -5,11 +5,7 @@ const api = axios.create({
   });
 
 
-export const getDatos= async()=>{
-  const response=await api.get('/datos')
 
-  return response;
-}
 
 export const getUser = async (uname, pass) => {
   const response = await api.post('/user/' + uname, {
@@ -23,5 +19,16 @@ export const getUser = async (uname, pass) => {
     return (user)
   }
 
+}
 
+export const getDatos= async()=>{
+  const response=await api.get('/datos')
+
+  return response;
+}
+
+export const getRegado= async()=>{
+  const response=await api.get('/regado')
+
+  return response;
 }

@@ -1,4 +1,4 @@
-export const RegadoTable = ({ id, hora, fecha }) => {
+export const RegadoTable = ({ id='-', hora='-', fecha='-' }) => {
     return (
         <tr key={id} className='text-center'>
             <th>{id}</th>

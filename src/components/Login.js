@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import { getUser } from '../services/services';
-
+import style from './css/Login.module.css'
 export default function Login(){
     // React States
   const [errorMessages, setErrorMessages] = useState({});
@@ -51,27 +51,29 @@ export default function Login(){
 
   // JSX code for login form
   const renderForm = (
-    <div className="form">
+    <div className={style.card}>
       <form onSubmit={handleSubmit}>
+        <h1 className={style.titulo}>Bienvenido a monitoriar tu lechuga :)</h1>
         <div className="input-container">
           <label>Username </label>
-          <input type="text" name="uname" required />
+          <input type="text" name="uname" required  className='form-control'/>
           {renderErrorMessage("uname")}
         </div>
         <div className="input-container">
           <label>Password </label>
-          <input type="password" name="pass" required />
+          <input type="password" name="pass" required className='form-control'/>
           {renderErrorMessage("pass")}
         </div>
         <div className="button-container">
-          <input type="submit" />
+          <button type='submit' className='btn btn-primary'>Enviar datos</button>
+
         </div>
       </form>
     </div>
   );
 
   return (
-    <div className="app">
+    <div className={style.container}>
       <div className="login-form">
         {isSubmitted ? window.location.replace('http://localhost:3000/menu'): renderForm}
       </div>

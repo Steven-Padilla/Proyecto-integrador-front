@@ -1,4 +1,4 @@
-export const DataTable = ({ id, hora, fecha, temp, humedad, agua, suelo }) => {
+export const DataTable = ({ id='-', hora='-', fecha='-', temp='-', humedad='-', agua='-', suelo='-' }) => {
     return (
         <tr key={id} className='text-center'>
             <th>{id}</th>

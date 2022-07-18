@@ -13,7 +13,6 @@ import { Actuales } from './components/Actuales';
 import { Historial } from './components/Historial';
 import { Menu } from './components/Menu'
 
-import './components/css.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -1,19 +1,27 @@
 .container{
+    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
     font-family: sans-serif;
     display: block;
     align-items: center;
     justify-content: center;
-    height: auto;
+    height: auto ;
+    min-height: 100vh;
     padding: 0 20px;
-    background-image: url(https://i.pinimg.com/originals/f5/b3/52/f5b352cc0e50776e343fae9f46636558.jpg);
+    /* background-image: url(https://i.pinimg.com/originals/f5/b3/52/f5b352cc0e50776e343fae9f46636558.jpg); */
+    /* background-color: #cdffd4; */
     background-size: cover;
 }
+
+
 
 .card{
     margin: 0 20vh ;
     box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 3);
     border-radius: 2%;
     background-color: #cdffd4;
+    /* background-image: url(https://i.pinimg.com/originals/f5/b3/52/f5b352cc0e50776e343fae9f46636558.jpg); */
     padding: 10vh 10vh; 
     height: auto;
 

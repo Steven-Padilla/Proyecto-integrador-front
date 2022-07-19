@@ -1,22 +1,27 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { getUser } from '../services/services';
 import style from './css/Login.module.css'
-export default function Login(){
-    // React States
+
+
+export default function Login() {
+  // React States
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
 
-  
+
 
   const errors = {
     uname: "invalid username",
     pass: "invalid password"
   };
 
- 
 
+  const cargarUsuario = () => {
+    localStorage.setItem('user', 'true')
+    return <Navigate to='/Menu' />
+  }
   const handleSubmit = (event) => {
     //Prevent page reload
     event.preventDefault();
@@ -24,24 +29,24 @@ export default function Login(){
     var { uname, pass } = document.forms[0];
 
     // Find user login info
-    getUser(uname.value,pass.value).then(function(data){
+    getUser(uname.value, pass.value).then(function (data) {
       // Compare user info
       console.log(data)
-      if(data.message){
-        if(data.error===1){
+      if (data.message) {
+        if (data.error === 1) {
           setErrorMessages({ name: "uname", message: errors.uname });
-        }else{
+        } else {
           setErrorMessages({ name: "pass", message: errors.pass });
         }
-      }else{
+      } else {
         setIsSubmitted(true);
       }
 
 
-    
+
     })
-    
-    
+
+
   };
 
   // Generate JSX code for error message
@@ -57,12 +62,12 @@ export default function Login(){
         <h1 className={style.titulo}>Bienvenido a monitoriar tu lechuga :)</h1>
         <div className="input-container">
           <label>Username </label>
-          <input type="text" name="uname" required  className='form-control'/>
+          <input type="text" name="uname" required className='form-control' />
           {renderErrorMessage("uname")}
         </div>
         <div className="input-container">
           <label>Password </label>
-          <input type="password" name="pass" required className='form-control'/>
+          <input type="password" name="pass" required className='form-control' />
           {renderErrorMessage("pass")}
         </div>
         <div className="button-container">
@@ -76,7 +81,7 @@ export default function Login(){
   return (
     <div className={style.container}>
       <div className="login-form">
-        {isSubmitted ? <Navigate to='/Menu' {...true} />: renderForm}
+        {isSubmitted ? cargarUsuario() : renderForm}
       </div>
     </div>
   );

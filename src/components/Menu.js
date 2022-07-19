@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 import style from "./css/Menu.module.css"
 
-export const Menu = (props) => {
-    console.log(props);
+const logout=()=>{
+    localStorage.removeItem('user')
+}
 
+const Componente = () => {
     return (
-
-
 
         <div className={style.container}  >
             <div className={style.card}>
@@ -27,10 +27,12 @@ export const Menu = (props) => {
 
                 </div>
                 <div className={style.btnLogout}>
-                    <a href="http://localhost:3000/" className="btn btn-danger btn-lg btn-block" >
+                <Link to="/">
+                    <button  className="btn btn-danger " onClick={logout}>
                         Logout
 
-                    </a>
+                    </button>
+                </Link>
                 </div>
 
             </div>
@@ -38,4 +40,15 @@ export const Menu = (props) => {
 
         </div>
     )
+}
+
+export const Menu = () => {
+
+    if (localStorage.getItem('user') === 'true') {
+        return <Componente />
+    } else {
+        return <Navigate to='/' />
+    }
+
+
 }
